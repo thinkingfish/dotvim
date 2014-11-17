@@ -1,5 +1,5 @@
 " Modeline and Notes {
-" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+" vim: set sw=4 ts=8 sts=4 et tw=79 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
 "
 " This is the personal .vimrc file of Yao Yue, based on Steve Francia's spf13-vim project (http://spf13.com).
