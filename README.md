@@ -1,3 +1,1 @@
-Inspired by [spf13-vim](https://github.com/spf13/spf13-vim), but not happy about the large bundle collection and lack of control in the package management/upgrade process, this is my attempt to tailor it to my own need with minimum clutter and maximum control.
-
-There are two types of changes: excluding packages that I don't use; use a passive update mechanism (based on pathogen).
+This is my personal vim setup using [git submodule based pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/) to manage a subset of resources in [spf13-vim](https://github.com/spf13/spf13-vim), to use a smaller bundle collection and manual upgrade.
