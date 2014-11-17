@@ -4,3 +4,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/bundle/rust"]
+	path = bundle/bundle/rust
+	url = https://github.com/wting/rust.vim
+[submodule "bundle/rust"]
+	path = bundle/rust
+	url = https://github.com/wting/rust.vim

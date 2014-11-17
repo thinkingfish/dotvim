@@ -1,6 +1,6 @@
 This is my personal vim setup using [git submodule based pathogen](http://usevim.com/2012/03/01/using-pathogen-with-git-submodules/) to manage a subset of resources in [spf13-vim](https://github.com/spf13/spf13-vim), to use a smaller bundle collection and manual upgrade.
 
-To use
+To install
 ```sh
 git clone git@github.com:thinkingfish/dotvim.git ~/.vim
 cd ~/.vim
