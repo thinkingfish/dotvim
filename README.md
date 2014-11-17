@@ -6,8 +6,7 @@ git clone git@github.com:thinkingfish/dotvim.git ~/.vim
 cd ~/.vim
 git submodule init
 git submodule update
-cd ~
-ln -s .vim/.vimrc .vimrc
+./setup.sh
 ```
 
 To add a module
