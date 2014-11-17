@@ -1,0 +1,2 @@
+" add paths managed by pathogen to runtimepath
+execute pathogen#infect()
