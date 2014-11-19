@@ -16,6 +16,3 @@
 [submodule "bundle/cscope_maps"]
 	path = bundle/cscope_maps
 	url = git@github.com:steffanc/cscopemaps.vim.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
