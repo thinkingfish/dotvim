@@ -16,3 +16,6 @@
 [submodule "bundle/cscope_maps"]
 	path = bundle/cscope_maps
 	url = git@github.com:steffanc/cscopemaps.vim.git
+[submodule "bundle/clang_complete"]
+	path = bundle/clang_complete
+	url = git@github.com:Rip-Rip/clang_complete.git
