@@ -13,6 +13,6 @@ To add a module
 ```sh
 GIT_REPO_URL=<repo_url> MODULE=<module>
 git submodule add $GIT_REPO_URL bundle/$MODULE
-git commit -m 'Added $MODULE'
+git commit -m "Added $MODULE"
 git push
 ```

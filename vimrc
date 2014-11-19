@@ -20,19 +20,20 @@
 " Environment {
 
     " Identify platform {
-	silent function! OSX()
-	    return has('macunix')
-	endfunction
-        silent function! LINUX()
-	    return has('unix') && !has('macunix') && !has('win32unix')
+        silent function! OSX()
+            return has('macunix'
         endfunction
-	silent function! WINDOWS()
-	    return (has('win16') || has('win32') || has('win64'))
+        silent function! LINUX()
+            return has('unix') && !has('macunix') && !has('win32unix')
+        endfunction
+        silent function! WINDOWS()
+            return (has('win16') || has('win32') || has('win64'))
         endfunction
     " }
 
     " Basics {
         set nocompatible        " Must be first line
+        execute pathogen#infect()
         if !WINDOWS()
             set shell=/bin/sh
         endif
@@ -54,18 +55,9 @@
     endif
 " }
 
-
-" Use bundles config {
-    if filereadable(expand("~/.vimrc.bundle"))
-        source ~/.vimrc.bundle
-    endif
-" }
-
 " General {
 
-    set background=dark         " Assume a dark background
     filetype plugin indent on   " Automatically detect file types.
-    syntax on                   " Syntax highlighting
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
@@ -79,8 +71,8 @@
     endif
 
     set autowrite               " Automatically write a file when leaving a modified buffer
-    set visualbell			    " Use visual bell (screen flash) instead of beeping
-    set nostartofline			" Do not go to start of line content, stay in the same column
+    set visualbell              " Use visual bell (screen flash) instead of beeping
+    set nostartofline           " Do not go to start of line content, stay in the same column
     set cf                      " Enable error files & error jumping
     set shortmess+=filmnrxoOtT  " Abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
@@ -102,6 +94,7 @@
             set undofile                " So is persistent undo ...
             set undolevels=1000         " Maximum number of changes that can be undone
             set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+        " InitializeDirectories() is called later to setup directories
         endif
     " }
 
@@ -109,13 +102,12 @@
 
 " Vim UI {
 
-    if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-        let g:solarized_termcolors=256
-        let g:solarized_termtrans=1
-        let g:solarized_contrast="normal"
-        let g:solarized_visibility="normal"
-        color solarized             " Load a colorscheme
-    endif
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="normal"
+    syntax enable                   " Syntax highlighting
+    set background=light
+    colorscheme solarized           " Load a colorscheme
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
@@ -124,7 +116,7 @@
 
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
-    "highlight clear CursorLineNr    " Remove highlight color from current line number
+    highlight clear CursorLineNr    " Remove highlight color from current line number
 
     if has('cmdline_info')
         set ruler                   " Show the ruler
@@ -195,3 +187,54 @@
 
 " }
 
+" Functions {
+
+    " Initialize directories {
+    function! InitializeDirectories()
+        let parent = $HOME
+        let prefix = 'vim'
+        let dir_list = {
+                    \ 'backupdir': '.backup',
+                    \ 'viewdir': '.backup',
+                    \ 'directory': '.backup'}
+
+        if has('persistent_undo')
+            let dir_list['undodir'] = '.backup'
+        endif
+
+        let common_dir = parent . '/.' . prefix
+
+        for [settingname, dirname] in items(dir_list)
+            let directory = common_dir . dirname . '/'
+            if exists("*mkdir")
+                if !isdirectory(directory)
+                    call mkdir(directory)
+                endif
+            endif
+            if !isdirectory(directory)
+                echo "Warning: Unable to create backup directory: " . directory
+                echo "Try: mkdir -p " . directory
+            else
+                let directory = substitute(directory, " ", "\\\\ ", "g")
+                exec "set " . settingname . "=" . directory
+            endif
+        endfor
+    endfunction
+    call InitializeDirectories()
+    " }
+
+    " Strip whitespace {
+    function! StripTrailingWhitespace()
+        " Preparation: save last search, and cursor position.
+        let _s=@/
+        let l = line(".")
+        let c = col(".")
+        " do the business:
+        %s/\s\+$//e
+        " clean up: restore previous search history, and cursor position
+        let @/=_s
+        call cursor(l, c)
+    endfunction
+    " }
+
+" }
