@@ -70,7 +70,6 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore     " Allow for cursor beyond last character
     set history=1000            " Store a ton of history (default is 20)
-    set spell                   " Spell checking on
     set hidden                  " Allow buffer switching without saving
     set iskeyword-=.            " '.' is an end of word designator
     set iskeyword-=#            " '#' is an end of word designator
@@ -174,7 +173,6 @@
     " Workaround vim-commentary for Haskell
     autocmd FileType haskell setlocal commentstring=--\ %s
     " Workaround broken color highlighting in Haskell
-    autocmd FileType haskell,rust setlocal nospell
 
     " indent_guides {
         if exists('g:indent_guildes') && isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
