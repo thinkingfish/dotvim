@@ -2,11 +2,8 @@ This is my personal vim setup using [git submodule based pathogen](http://usevim
 
 To install
 ```sh
-git clone git@github.com:thinkingfish/dotvim.git ~/.vim
-cd ~/.vim
-git submodule init
-git submodule update
-./setup.sh
+git clone --recursive git@github.com:thinkingfish/dotvim.git ~/.vim
+.vim/setup.sh
 ```
 
 To add a module
