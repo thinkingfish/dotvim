@@ -94,17 +94,16 @@
 
 " Vim UI {
 
-    let g:solarized_termcolors=256
-    let g:solarized_contrast="high"
-    let g:solarized_visibility="normal"
     syntax enable                   " Syntax highlighting
-    set background=dark
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="normal"
+    let g:solarized_visibility="normal"
     colorscheme solarized           " Load a colorscheme
+    set background=light
+    set cursorline                  " Highlight current line
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
-
-    set cursorline                  " Highlight current line
 
     highlight clear SignColumn      " SignColumn should match background
     highlight clear LineNr          " Current line number row will have same background color in relative mode
