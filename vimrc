@@ -98,7 +98,7 @@
     let g:solarized_contrast="high"
     let g:solarized_visibility="normal"
     syntax enable                   " Syntax highlighting
-    set background=light
+    set background=dark
     colorscheme solarized           " Load a colorscheme
 
     set tabpagemax=15               " Only show 15 tabs
@@ -176,6 +176,14 @@
     autocmd FileType haskell setlocal commentstring=--\ %s
     " Workaround broken color highlighting in Haskell
     autocmd FileType haskell,rust setlocal nospell
+
+    " indent_guides {
+        if exists('g:indent_guildes') && isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+            let g:indent_guides_start_level = 2
+            let g:indent_guides_guide_size = 1
+            let g:indent_guides_enable_on_vim_startup = 1
+        endif
+    " }
 
 " }
 
