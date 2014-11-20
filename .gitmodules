@@ -16,3 +16,6 @@
 [submodule "bundle/cscope_maps"]
 	path = bundle/cscope_maps
 	url = git@github.com:steffanc/cscopemaps.vim.git
+[submodule "bundle/vim-tags"]
+	path = bundle/vim-tags
+	url = git@github.com:szw/vim-tags.git
