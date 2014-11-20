@@ -255,20 +255,51 @@
         hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=darkcyan cterm=NONE
 
         " Some convenient mappings
-        inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-        if exists('g:spf13_map_cr_omni_complete')
-            inoremap <expr> <CR>     pumvisible() ? "\<C-y>" : "\<CR>"
-        endif
-        inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-        inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-        inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-        inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
+        inoremap <expr> <Esc>   pumvisible() ? "\<C-e>" : "\<Esc>"
+        inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
+        inoremap <expr> <Down>  pumvisible() ? "\<C-n>" : "\<Down>"
+        inoremap <expr> <Up>    pumvisible() ? "\<C-p>" : "\<Up>"
+        inoremap <expr> <C-d>   pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
+        inoremap <expr> <C-u>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 
         " Automatically open and close the popup menu / preview window
         au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
         set completeopt=menu,preview,longest
     " }
 
+    " NerdTree {
+        if isdirectory(expand("~/.vim/bundle/nerdtree"))
+            map <C-e> <plug>NERDTreeTabsToggle<CR>
+            map <leader>e :NERDTreeFind<CR>
+            nmap <leader>nt :NERDTreeFind<CR>
+
+            let NERDTreeShowBookmarks=1
+            let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '\.o$', '\.lo$', '^\.deps$', '^\.libs$']
+            let NERDTreeChDirMode=0
+            let NERDTreeQuitOnOpen=1
+            let NERDTreeMouseMode=2
+            let NERDTreeShowHidden=1
+            let NERDTreeKeepTreeInNewTab=1
+            let g:nerdtree_tabs_open_on_gui_startup=0
+        endif
+    " }
+
+    " Fugitive shortcuts {
+        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+            nnoremap <silent> <leader>gs :Gstatus<CR>
+            nnoremap <silent> <leader>gd :Gdiff<CR>
+            nnoremap <silent> <leader>gc :Gcommit<CR>
+            nnoremap <silent> <leader>gb :Gblame<CR>
+            nnoremap <silent> <leader>gl :Glog<CR>
+            nnoremap <silent> <leader>gp :Git push<CR>
+            nnoremap <silent> <leader>gr :Gread<CR>
+            nnoremap <silent> <leader>gw :Gwrite<CR>
+            nnoremap <silent> <leader>ge :Gedit<CR>
+            " Mnemonic _i_nteractive
+            nnoremap <silent> <leader>gi :Git add -p %<CR>
+            nnoremap <silent> <leader>gg :SignifyToggle<CR>
+        endif
+    "}
 
 " }
 
@@ -321,22 +352,5 @@
         call cursor(l, c)
     endfunction
     " }
-
-    " Fugitive shortcuts {
-        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
-            nnoremap <silent> <leader>gs :Gstatus<CR>
-            nnoremap <silent> <leader>gd :Gdiff<CR>
-            nnoremap <silent> <leader>gc :Gcommit<CR>
-            nnoremap <silent> <leader>gb :Gblame<CR>
-            nnoremap <silent> <leader>gl :Glog<CR>
-            nnoremap <silent> <leader>gp :Git push<CR>
-            nnoremap <silent> <leader>gr :Gread<CR>
-            nnoremap <silent> <leader>gw :Gwrite<CR>
-            nnoremap <silent> <leader>ge :Gedit<CR>
-            " Mnemonic _i_nteractive
-            nnoremap <silent> <leader>gi :Git add -p %<CR>
-            nnoremap <silent> <leader>gg :SignifyToggle<CR>
-        endif
-    "}
 
 " }
