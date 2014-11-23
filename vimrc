@@ -53,6 +53,9 @@
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
     set timeoutlen=2000         " keymapping times out slower
+    if !has('gui')
+        set term=ansi           " Make arrow and other keys work
+    endif
 
     if has('clipboard')
         if has('unnamedplus')   " When possible use + register for copy-paste
@@ -97,8 +100,10 @@
     let g:solarized_termcolors=256
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
-    colorscheme solarized           " Load a colorscheme
-    set background=light
+    if has('gui')
+        set background=light
+        colorscheme solarized           " Load a colorscheme
+    endif
     set cursorline                  " Highlight current line
 
     set tabpagemax=15               " Only show 15 tabs
