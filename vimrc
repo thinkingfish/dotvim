@@ -37,6 +37,8 @@
         if !WINDOWS()
             set shell=/bin/sh
         endif
+
+        set runtimepath^=~/.vim/bundle/ctrlp.vim
     " }
 " }
 
