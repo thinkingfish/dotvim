@@ -79,7 +79,6 @@
     set iskeyword-=.            " '.' is an end of word designator
     set iskeyword-=#            " '#' is an end of word designator
     set iskeyword-=-            " '-' is an end of word designator
-    set spell spelllang=en_us   " enable spellchecking, I clearly cannot spell
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -176,6 +175,7 @@
     autocmd FileType c,cpp,java,go,javascript,python,ruby,rust,yml,perl autocmd BufWritePre <buffer> call StripTrailingWhitespace()
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd FileType haskell,python,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd FileType markdown, rst, text setlocal spell
     " preceding line best in a plugin but here for now.
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
     " Workaround vim-commentary for Haskell
