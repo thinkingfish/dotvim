@@ -175,7 +175,7 @@
     autocmd FileType c,cpp,java,go,javascript,python,ruby,rust,yml,perl autocmd BufWritePre <buffer> call StripTrailingWhitespace()
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd FileType haskell,python,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
-    autocmd FileType markdown, rst, text setlocal spell
+    autocmd FileType markdown,rst,text setlocal spell
     " preceding line best in a plugin but here for now.
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
     " Workaround vim-commentary for Haskell
