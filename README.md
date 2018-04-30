@@ -18,6 +18,8 @@ To upgrade
 ```sh
 cd bundle/$MODULE
 git pull
+# or, to upgrade all
+git submodule foreach git pull
 # when all modules are upgraded
 git commit -am "upgrade $MODULE"
 ```
