@@ -13,3 +13,11 @@ git submodule add $GIT_REPO_URL bundle/$MODULE
 git commit -m "Added $MODULE"
 git push
 ```
+
+To upgrade
+```sh
+cd bundle/$MODULE
+git pull
+# when all modules are upgraded
+git commit -am "upgrade $MODULE"
+```
