@@ -192,6 +192,22 @@
 
 " }
 
+" Syntastic {
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+    let g:syntastic_c_config_file = '.syntastic_c_config'
+    let g:syntastic_c_auto_refresh_includes = 1
+    let g:syntastic_c_check_header = 1
+    let g:syntastic_c_include_dirs = [ 'include' ]
+    let g:syntastic_c_remove_include_errors = 1
+" }
+
 " Key (re)Mappings {
 
     " The default leader is '\', using '*' as it is in a standard location
