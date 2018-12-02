@@ -30,3 +30,6 @@
 [submodule "bundle/riv.vim"]
 	path = bundle/riv.vim
 	url = git@github.com:Rykka/riv.vim.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
