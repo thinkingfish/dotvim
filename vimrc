@@ -214,6 +214,16 @@
     map <C-L> <C-W>l<C-W>_
     map <C-H> <C-W>h<C-W>_
 
+    " QuickFix command mapping
+    map <C-n> :cnext<CR>
+    map <C-m> :cprevious<CR>
+    nnoremap <leader>a :cclose<CR>
+
+    " Go execution
+    autocmd FileType go nmap <localleader>b  <Plug>(go-build)
+    autocmd FileType go nmap <localleader>r  <Plug>(go-run)
+    autocmd FileType go nmap <localleader>t  <Plug>(go-test)
+
     " Code folding options
     nmap <leader>f0 :set foldlevel=0<CR>
     nmap <leader>f1 :set foldlevel=1<CR>
