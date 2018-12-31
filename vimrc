@@ -172,7 +172,7 @@
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     highlight TrailingWhitespace ctermbg=red guibg=red
-    autocmd FileType c,cpp,java,go,javascript,python,rst,ruby,rust,yml,perl autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+    autocmd FileType c,cpp,java,javascript,python,rst,ruby,rust,yml,perl autocmd BufWritePre <buffer> call StripTrailingWhitespace()
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd FileType haskell,python,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd FileType markdown,rst,text setlocal spell
@@ -275,6 +275,9 @@
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
     " }
+
+    " Tagbar toggle
+    nmap <leader>tb :TagbarToggle<CR>
 
     " OmniComplete {
         if has("autocmd") && exists("+omnifunc")
