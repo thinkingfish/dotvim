@@ -201,6 +201,9 @@
     let g:syntastic_c_config_file = '.syntastic_c_config'
     let g:syntastic_c_auto_refresh_includes = 1
     let g:syntastic_c_check_header = 1
+
+    let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+    nnoremap <C-w>e :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 " }
 
 " Key (re)Mappings {
