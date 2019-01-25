@@ -36,3 +36,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git@github.com:majutsushi/tagbar.git
+[submodule "bundle/tablify"]
+	path = bundle/tablify
+	url = https://github.com/Stormherz/tablify
