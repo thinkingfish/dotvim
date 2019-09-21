@@ -108,6 +108,11 @@
     endif
     set cursorline                  " Highlight current line
 
+    hi clear SpellBad
+    hi SpellBad cterm=underline
+    " Set style for gVim
+    hi SpellBad gui=undercurl
+
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
 
