@@ -4,4 +4,4 @@
 if [ -f "$HOME/.vimrc" ]; then
     mv ~/.vimrc ~/.vimrc.backup
 fi
-ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/config/vim/vimrc ~/.vimrc

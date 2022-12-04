@@ -2,7 +2,7 @@ This is my personal vim setup using [git submodule based pathogen](http://usevim
 
 To install
 ```sh
-git clone --recursive git@github.com:thinkingfish/dotvim.git ~/.vim
+git clone --recursive git@github.com:thinkingfish/dotvim.git ~/config/vim
 .vim/setup.sh
 ```
 
