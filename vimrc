@@ -33,12 +33,13 @@
 
     " Basics {
         set nocompatible        " Must be first line
+        source ~/config/vim/autoload/pathogen.vim       " location of pathogen
         execute pathogen#infect()
         if !WINDOWS()
             set shell=/bin/sh
         endif
 
-        set runtimepath^=~/.vim/bundle/ctrlp.vim
+        set runtimepath^=~/config/vim/bundle/ctrlpvim
     " }
 " }
 
@@ -189,7 +190,7 @@
     " Workaround broken color highlighting in Haskell
 
     " indent_guides {
-        if exists('g:indent_guildes') && isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+        if exists('g:indent_guildes') && isdirectory(expand("~/config/vim/bundle/vim-indent-guides/"))
             let g:indent_guides_start_level = 2
             let g:indent_guides_guide_size = 1
             let g:indent_guides_enable_on_vim_startup = 1
@@ -314,7 +315,7 @@
     " }
 
     " NerdTree {
-        if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        if isdirectory(expand("~/config/vim/bundle/nerdtree"))
             map <C-e> <plug>NERDTreeTabsToggle<CR>
             map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
@@ -331,7 +332,7 @@
     " }
 
     " Fugitive shortcuts {
-        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+        if isdirectory(expand("~/config/vim/bundle/vim-fugitive/"))
             nnoremap <silent> <leader>gs :Gstatus<CR>
             nnoremap <silent> <leader>gd :Gdiff<CR>
             nnoremap <silent> <leader>gc :Gcommit<CR>
